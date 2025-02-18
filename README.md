@@ -341,22 +341,59 @@ After feature engineering, additional analysis was conducted to examine the impa
 - Distribution of the target variable (*spoiler vs. non-spoiler reviews*).  
 - Missing value analysis and visualization.  
 
+```bash
+Basic Information:
+Total samples:  573,378
+Total features: 180
+```
+```bash
+Target variable distribution: is_spoiler
+False    0.7369
+True     0.2631
+Name: proportion, dtype: float64
+```
+```bash
+Missing Values Analysis:
+                Missing Values  Missing Percent
+plot_synopsis            35060         6.114640
+review_summary               3         0.000523
+```
+
 ### **2. Feature Distributions**  
 - Histograms for numerical features to inspect their distributions.  
 - Excluded high-dimensional features like SVD and LDA topics from basic analysis.  
+
+![Review Length Distribution](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/numerical_dist_1.png)
+
+![Review Rating Distribution](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/numerical_dist_7.png)
 
 ### **3. Correlation Analysis**  
 - **Correlation with Target Variable:** Identifies which numerical features are most associated with spoilers.  
 - **Top Positively & Negatively Correlated Features:** Highlights features with the strongest relationships to spoiler likelihood.  
 - **Pairplot Analysis:** Visualizes interactions between top correlated features and spoilers.  
 
+![Correlation with Target](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/target_correlation.png)
+
+![Top Positively Correlated Features](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/top_pos_correlation.png)
+
+![Top Negatively Correlated Features](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/top_neg_correlation.png)
+
 ### **4. Spoiler Keywords Analysis**  
 - **Frequency Analysis:** Counts of spoiler-related keywords found in reviews.  
 - **Keyword Correlation with Spoilers:** Identifies which keywords are most predictive of spoiler content.  
 
+![Spoiler Keyword Frequency](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/spoiler_keyword_freq.png)
+
+![Keyword Correlation with Spoilers](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/spoiler_keyword_corr.png)
+
 ### **5. Sentiment and Text Complexity Analysis**  
 - **Sentiment Score by Spoiler Status:** Analyzes whether spoilers are associated with more extreme sentiment.  
 - **Readability & Complexity Features:** Examines word count, sentence structure, and readability scores.  
+
+![Sentiment Score by Spoiler Status](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/sentiment_by_spoiler.png)
+
+![Readability & Complexity Features](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/text_complexity_corr.png)
+
 
 ### **6. Dimensionality Reduction Analysis**  
 - **PCA on SVD Features:**  
@@ -366,27 +403,53 @@ After feature engineering, additional analysis was conducted to examine the impa
   - Average topic weights compared between spoiler and non-spoiler reviews.  
   - Correlation of topics with spoiler likelihood.  
 
+<!-- ![PCA on SVD Features](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/svd_pca_by_spoiler.png) -->
+
+![Topic Modeling (LDA) Analysis](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/topic_avg_by_spoiler.png)
+
+![Topic Correlation with Spoilers](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/topic_correlation.png)
+
 ### **7. Named Entity Recognition (NER) Analysis**  
 - **Entity Frequency:** Counts of named entities (e.g., characters, locations) appearing in reviews.  
 - **Entity Correlation with Spoilers:** Identifies whether certain named entities indicate spoiler content.  
 
+<!-- ![Entity Frequency](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/entity_counts.png)
+
+![Entity Correlation with Spoilers](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/entity_correlation.png)
+
+![Entity Presence by Spoiler Status](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/entity_by_spoiler.png) -->
+
 ### **8. Text Similarity Analysis**  
 - **Review vs. Plot Summary Similarity:** Measures if reviews closely match official plot descriptions.  
 - **Review Summary vs. Synopsis Similarity:** Checks how well condensed reviews align with full movie synopses.  
+
+![Review vs. Plot Summary Similarity](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/similarity_scores_by_spoiler.png)
+
+![Review Summary vs. Synopsis Similarity](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/similarity_complexity_corr.png)
 
 ### **9. Temporal Analysis**  
 - **Spoiler Rate Over Time:**  
   - Reviews analyzed by year and month to see if spoiler frequency changes over time.  
   - Days since movie release examined to determine if spoilers are more common soon after release.  
 
+![Spoiler Rate Over Time](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/spoiler_by_year.png)
+
+![Spoiler Rate by Movie Rating](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/spoiler_by_rating.png)
+
+<!-- ![Days Since Release](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/spoiler_by_release_time.png) -->
+
 ### **10. Movie Metadata Analysis**  
 - **Spoiler Frequency by Genre:** Determines if some genres are more prone to spoiler-heavy reviews.  
 - **Spoiler Rate by Movie Rating:** Checks whether highly rated or poorly rated movies have more spoilers.  
+
+![Spoiler Frequency by Genre](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/spoiler_by_genre.png)
 
 ### **11. Feature Importance Analysis**  
 - **Top Features for Spoiler Prediction:**  
   - Identifies the most predictive features based on their correlation with *is_spoiler*.  
   - Results saved as visualizations for model interpretation.  
+
+![Feature Importance](https://raw.githubusercontent.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/refs/heads/main/eda/engineered/feature_importance.png)
 
 ### **Visualization Output**  
 All plots are saved in `eda/engineered/` for further analysis.  
