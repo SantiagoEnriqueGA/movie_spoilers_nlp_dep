@@ -11,7 +11,17 @@ The workflow includes:
 
 Here’s the README section for the data loading and preprocessing:  
 
-## Data Loading and Preprocessing - `0_data_load.py`
+## Project Steps and Workflow
+<!-- with links to the sections -->
+- Section 0: [Data Loading and Preprocessing](#data-loading-and-preprocessing)
+- Section 1: [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+- Section 2: [Feature Engineering](#feature-engineering)
+  - Section 2.1: [Data Preprocessing and Splitting](#data-preprocessing-and-splitting)
+  - Section 2.2: [Post-Feature Engineering Exploratory Data Analysis (EDA)](#post-feature-engineering-exploratory-data-analysis-eda)
+- Section 3: [Baseline Model Training and Evaluation](#baseline-model-training-and-evaluation)
+
+## Data Loading and Preprocessing
+#### See [`0_data_load.py`](https://github.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/blob/main/0_data_load.py)
 
 The dataset consists of movie reviews and movie details sourced from the IMDB Spoiler Dataset. The following steps are performed:  
 
@@ -30,7 +40,8 @@ The dataset consists of movie reviews and movie details sourced from the IMDB Sp
 These steps ensure the data is structured and ready for exploratory analysis and feature engineering.  
 
 
-## Exploratory Data Analysis (EDA) - `1_eda.py`
+## Exploratory Data Analysis (EDA)
+#### See [`1_eda.py`](https://github.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/blob/main/1_eda.py)
 
 To understand the structure and characteristics of the dataset, an initial exploratory data analysis (EDA) was performed. Key analyses include:  
 
@@ -161,7 +172,8 @@ dtype: int64
 All plots are saved in the `eda/initial/` directory for further reference.  
 
 
-## Feature Engineering - `2_feature_engineering.py`
+## Feature Engineering 
+#### See [`2.0_feature_engineering.py`](https://github.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/blob/main/2.0_feature_engineering.py)
 
 To improve the predictive power of the model, multiple feature engineering techniques were applied to extract meaningful information from textual data, metadata, and timestamps.  
 
@@ -291,7 +303,8 @@ Files saved:
 
 
 
-## Data Preprocessing and Splitting - `2.1_feature_engineering_splits.py`
+## Data Preprocessing and Splitting 
+#### See [`2.1_feature_engineering_splits.py`](https://github.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/blob/main/2.1_feature_engineering_splits.py)
 
 Before training models, the dataset undergoes several preprocessing steps to ensure data quality, balance class distributions, and optimize feature representation.  
 
@@ -332,7 +345,8 @@ Before training models, the dataset undergoes several preprocessing steps to ens
 - These figures are saved in `reports/v3/figures/`.  
 
 
-## Post-Feature Engineering Exploratory Data Analysis (EDA) - `2.2_feature_engineered_eda.py`
+## Post-Feature Engineering Exploratory Data Analysis (EDA) 
+#### See [`2.2_feature_engineered_eda.py`](https://github.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/blob/main/2.2_feature_engineered_eda.py)
 
 After feature engineering, additional analysis was conducted to examine the impact of new features and their relationships with the target variable (*is_spoiler*). This step helps understand which features are most relevant for spoiler detection.  
 
@@ -453,4 +467,64 @@ review_summary               3         0.000523
 
 ### **Visualization Output**  
 All plots are saved in `eda/engineered/` for further analysis.  
+
+
+## Baseline Model Training and Evaluation  
+#### See [`3_model_baselines.py`](https://github.com/SantiagoEnriqueGA/movie_spoilers_nlp_dep/blob/main/3_model_baselines.py)
+
+To establish a performance benchmark, multiple machine learning models were trained and evaluated using different feature sets. The models were tested on:  
+
+1. **BASE:** Original processed dataset.  
+2. **SMOTE:** Dataset with synthetic minority class samples generated to address class imbalance.  
+3. **SMOTE_PCA:** SMOTE dataset with dimensionality reduction using Principal Component Analysis (PCA).  
+
+### **1. Models Trained**  
+The following classifiers were used:  
+
+- **Logistic Regression** - Simple linear model effective for binary classification.  
+- **Stochastic Gradient Descent (SGD) Classifier** - Efficient model optimized for large datasets.  
+- **Random Forest Classifier** - Ensemble model using multiple decision trees.  
+- **K-Nearest Neighbors (KNN)** - Non-parametric model based on similarity.  
+- **XGBoost** - Gradient boosting model optimized for speed and performance.  
+- **LightGBM** - Another gradient boosting model designed for large datasets.  
+- **Gradient Boosting Classifier** - Slower but highly accurate boosting algorithm.  
+- **AdaBoost Classifier** - Adaptive boosting to correct weak models iteratively.  
+- **Linear Support Vector Classifier (SVC)** - Support vector machine optimized for imbalanced data.  
+- **Decision Tree Classifier** - Simple tree-based model for interpretability.  
+
+### **2. Model Training**  
+- Each model was trained on all three dataset variations (**BASE, SMOTE, SMOTE_PCA**).  
+- Training time was logged to compare computational efficiency.  
+- Class weights were adjusted for imbalanced classes where applicable.  
+
+### **3. Evaluation Metrics**  
+Each model was evaluated using:  
+- **Accuracy:** Overall correctness of predictions.  
+- **Precision:** How many predicted spoilers were actual spoilers.  
+- **Recall:** How many actual spoilers were correctly identified.  
+- **F1-Score:** Harmonic mean of precision and recall, balancing both metrics.  
+- **AUC-ROC Score:** Measures how well the model distinguishes between spoiler and non-spoiler reviews.  
+
+### **4. Visualizations and Reports**  
+For each model, the following performance plots were generated:  
+- **Confusion Matrix:** Displays misclassification errors.  
+- **ROC Curve:** Shows the trade-off between true positive and false positive rates.  
+- **Precision-Recall Curve:** Highlights model performance in handling imbalanced data.  
+- **Comparison Charts:** Ranks models based on accuracy, F1-score, and AUC-ROC across different datasets.  
+
+### **5. Best Model Selection and Ensemble Learning**  
+- The **top three models** with the highest F1-score were selected.  
+- An **ensemble model** (Voting Classifier) was built using these models for improved performance.  
+- The ensemble model was evaluated and compared against individual classifiers.  
+
+### **6. Final Results and Comparison Across Data Variants**  
+- Model performance was compared across **BASE, SMOTE, and SMOTE_PCA** datasets.  
+- Results were compiled into `reports/v3/all_model_comparison.csv`.  
+- A **Best Model Comparison Plot** visualizes the highest-performing model for each dataset variation.  
+
+### **7. Saved Models and Outputs**  
+- Trained models were saved under `models/v3/{dataset_type}/`.  
+- Reports and performance figures were stored in `reports/v3/{dataset_type}/`.  
+- The final ensemble model was saved as `models/v3/{dataset_type}/ensemble_model.pkl`.  
+
 
