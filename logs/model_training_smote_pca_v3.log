@@ -1,0 +1,153 @@
+2025-02-17 15:43:32,735 - INFO - Starting model training for SMOTE_PCA data
+2025-02-17 15:43:32,757 - INFO - Successfully loaded data from data/processed/v3/splits/smote_pca
+2025-02-17 15:43:32,757 - INFO - Training set shape: (676034, 1), Test set shape: (114676, 1)
+2025-02-17 15:43:32,759 - INFO - Training label distribution: [338017 338017]
+2025-02-17 15:43:32,760 - INFO - Testing label distribution: [84505 30171]
+2025-02-17 15:43:32,763 - INFO - Starting training for Logistic Regression...
+2025-02-17 15:43:35,161 - INFO - Logistic Regression trained in 2.40 seconds
+2025-02-17 15:43:35,162 - INFO - Saved Logistic Regression model to models/v3/smote_pca/logistic_regression_model.pkl
+2025-02-17 15:43:35,219 - INFO - ROC AUC for Logistic Regression: 0.6363
+2025-02-17 15:43:35,531 - INFO - Classification Report for Logistic Regression:
+2025-02-17 15:43:35,553 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.80      0.64      0.71     84505
+           1       0.35      0.54      0.43     30171
+
+    accuracy                           0.62    114676
+   macro avg       0.58      0.59      0.57    114676
+weighted avg       0.68      0.62      0.64    114676
+
+2025-02-17 15:43:35,555 - INFO - Confusion Matrix for Logistic Regression:
+2025-02-17 15:43:35,555 - INFO - 
+[[54458 30047]
+ [13737 16434]]
+2025-02-17 15:43:35,710 - INFO - Starting training for SGD Classifier...
+2025-02-17 15:43:37,779 - INFO - SGD Classifier trained in 2.07 seconds
+2025-02-17 15:43:37,781 - INFO - Saved SGD Classifier model to models/v3/smote_pca/sgd_classifier_model.pkl
+2025-02-17 15:43:37,831 - INFO - ROC AUC for SGD Classifier: 0.6363
+2025-02-17 15:43:38,120 - INFO - Classification Report for SGD Classifier:
+2025-02-17 15:43:38,142 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.80      0.65      0.72     84505
+           1       0.35      0.54      0.43     30171
+
+    accuracy                           0.62    114676
+   macro avg       0.58      0.59      0.57    114676
+weighted avg       0.68      0.62      0.64    114676
+
+2025-02-17 15:43:38,144 - INFO - Confusion Matrix for SGD Classifier:
+2025-02-17 15:43:38,144 - INFO - 
+[[54805 29700]
+ [13890 16281]]
+2025-02-17 15:43:38,300 - INFO - Starting training for Random Forest...
+2025-02-17 15:44:09,206 - INFO - Random Forest trained in 30.91 seconds
+2025-02-17 15:44:09,245 - INFO - Saved Random Forest model to models/v3/smote_pca/random_forest_model.pkl
+2025-02-17 15:44:09,665 - INFO - ROC AUC for Random Forest: 0.6361
+2025-02-17 15:44:09,928 - INFO - Classification Report for Random Forest:
+2025-02-17 15:44:09,953 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.81      0.57      0.67     84505
+           1       0.34      0.62      0.44     30171
+
+    accuracy                           0.58    114676
+   macro avg       0.58      0.60      0.56    114676
+weighted avg       0.69      0.58      0.61    114676
+
+2025-02-17 15:44:09,954 - INFO - Confusion Matrix for Random Forest:
+2025-02-17 15:44:09,955 - INFO - 
+[[48232 36273]
+ [11323 18848]]
+2025-02-17 15:44:10,107 - INFO - Starting training for XGBoost...
+2025-02-17 15:44:13,146 - INFO - XGBoost trained in 3.04 seconds
+2025-02-17 15:44:13,150 - INFO - Saved XGBoost model to models/v3/smote_pca/xgboost_model.pkl
+2025-02-17 15:44:13,315 - INFO - ROC AUC for XGBoost: 0.6362
+2025-02-17 15:44:13,570 - INFO - Classification Report for XGBoost:
+2025-02-17 15:44:13,594 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.81      0.57      0.67     84505
+           1       0.34      0.63      0.44     30171
+
+    accuracy                           0.58    114676
+   macro avg       0.58      0.60      0.55    114676
+weighted avg       0.69      0.58      0.61    114676
+
+2025-02-17 15:44:13,596 - INFO - Confusion Matrix for XGBoost:
+2025-02-17 15:44:13,596 - INFO - 
+[[48027 36478]
+ [11263 18908]]
+2025-02-17 15:44:13,762 - INFO - Starting training for LightGBM...
+2025-02-17 15:44:14,632 - INFO - LightGBM trained in 0.87 seconds
+2025-02-17 15:44:14,637 - INFO - Saved LightGBM model to models/v3/smote_pca/lightgbm_model.pkl
+2025-02-17 15:44:14,789 - INFO - ROC AUC for LightGBM: 0.6363
+2025-02-17 15:44:15,110 - INFO - Classification Report for LightGBM:
+2025-02-17 15:44:15,134 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.81      0.57      0.67     84505
+           1       0.34      0.62      0.44     30171
+
+    accuracy                           0.58    114676
+   macro avg       0.58      0.60      0.56    114676
+weighted avg       0.69      0.58      0.61    114676
+
+2025-02-17 15:44:15,136 - INFO - Confusion Matrix for LightGBM:
+2025-02-17 15:44:15,136 - INFO - 
+[[48163 36342]
+ [11321 18850]]
+2025-02-17 15:44:15,294 - INFO - Starting training for AdaBoost...
+2025-02-17 15:44:43,156 - INFO - AdaBoost trained in 27.86 seconds
+2025-02-17 15:44:43,189 - INFO - Saved AdaBoost model to models/v3/smote_pca/adaboost_model.pkl
+2025-02-17 15:44:44,272 - INFO - ROC AUC for AdaBoost: 0.6329
+2025-02-17 15:44:44,499 - INFO - Classification Report for AdaBoost:
+2025-02-17 15:44:44,521 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.83      0.44      0.57     84505
+           1       0.32      0.75      0.45     30171
+
+    accuracy                           0.52    114676
+   macro avg       0.58      0.59      0.51    114676
+weighted avg       0.70      0.52      0.54    114676
+
+2025-02-17 15:44:44,522 - INFO - Confusion Matrix for AdaBoost:
+2025-02-17 15:44:44,523 - INFO - 
+[[36769 47736]
+ [ 7509 22662]]
+2025-02-17 15:44:44,696 - INFO - Starting training for Linear SVC...
+2025-02-17 15:44:44,863 - INFO - Linear SVC trained in 0.17 seconds
+2025-02-17 15:44:44,864 - INFO - Saved Linear SVC model to models/v3/smote_pca/linear_svc_model.pkl
+2025-02-17 15:44:44,910 - INFO - ROC AUC for Linear SVC: 0.6363
+2025-02-17 15:44:45,207 - INFO - Classification Report for Linear SVC:
+2025-02-17 15:44:45,230 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.80      0.65      0.72     84505
+           1       0.35      0.54      0.43     30171
+
+    accuracy                           0.62    114676
+   macro avg       0.58      0.59      0.57    114676
+weighted avg       0.68      0.62      0.64    114676
+
+2025-02-17 15:44:45,231 - INFO - Confusion Matrix for Linear SVC:
+2025-02-17 15:44:45,232 - INFO - 
+[[54754 29751]
+ [13849 16322]]
+2025-02-17 15:44:45,679 - INFO - Creating ensemble from top models: ['AdaBoost', 'XGBoost', 'Random Forest']
+2025-02-17 15:45:45,419 - INFO - Saved ensemble model to models/v3/smote_pca/ensemble_model.pkl
+2025-02-17 15:45:46,177 - INFO - Ensemble ROC AUC: 0.6362
+2025-02-17 15:45:46,952 - INFO - Ensemble Classification Report:
+2025-02-17 15:45:46,952 - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.81      0.56      0.66     84505
+           1       0.34      0.64      0.44     30171
+
+    accuracy                           0.58    114676
+   macro avg       0.58      0.60      0.55    114676
+weighted avg       0.69      0.58      0.60    114676
+
+2025-02-17 15:45:46,952 - INFO - Completed model training for SMOTE_PCA data

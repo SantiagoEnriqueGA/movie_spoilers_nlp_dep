@@ -1,0 +1,39 @@
+2025-02-17 12:52:01,050 - INFO - Successfully loaded dataset with 573378 rows and 180 columns
+2025-02-17 12:52:01,089 - INFO - Starting data preprocessing...
+2025-02-17 12:52:01,518 - INFO - Initial target class distribution:
+2025-02-17 12:52:01,687 - INFO - is_spoiler
+0    422522
+1    150856
+Name: count, dtype: int64
+2025-02-17 12:52:01,698 - INFO - Class imbalance ratio: 1:2.80
+2025-02-17 12:52:02,613 - INFO - Standardizing numerical features...
+2025-02-17 12:52:04,260 - INFO - Saved scaler to models/v3/prep/scaler.pkl
+2025-02-17 12:52:04,260 - INFO - Splitting data into training and testing sets...
+2025-02-17 12:52:06,125 - INFO - Training set target class counts:
+2025-02-17 12:52:06,128 - INFO - is_spoiler
+0    338017
+1    120685
+Name: count, dtype: int64
+2025-02-17 12:52:06,128 - INFO - Testing set target class counts:
+2025-02-17 12:52:06,129 - INFO - is_spoiler
+0    84505
+1    30171
+Name: count, dtype: int64
+2025-02-17 12:52:06,130 - INFO - Saving baseline splits...
+2025-02-17 12:52:06,687 - INFO - Applying SMOTE to handle class imbalance...
+2025-02-17 12:52:37,435 - INFO - SMOTE completed successfully
+2025-02-17 12:52:37,435 - INFO - SMOTE-resampled training set target class counts:
+2025-02-17 12:52:37,439 - INFO - is_spoiler
+0    338017
+1    338017
+Name: count, dtype: int64
+2025-02-17 12:52:37,439 - INFO - Saving SMOTE-resampled splits...
+2025-02-17 12:52:38,402 - INFO - Applying Incremental PCA for dimensionality reduction...
+2025-02-17 12:52:38,402 - INFO - Determining optimal number of components...
+2025-02-17 12:52:45,929 - INFO - Using 1 components to explain 95% of variance
+2025-02-17 12:52:53,173 - INFO - Saved PCA model to models/v3/prep/pca.pkl
+2025-02-17 12:52:53,173 - INFO - Transforming data with PCA...
+2025-02-17 12:52:53,508 - INFO - Saving PCA-transformed splits...
+2025-02-17 12:52:53,528 - INFO - Data preprocessing and transformation completed successfully!
+2025-02-17 12:52:53,538 - INFO - Saved preprocessing metadata to models/v3/prep/preprocessing_metadata.pkl
+2025-02-17 12:52:53,538 - INFO - All processing completed successfully!

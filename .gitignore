@@ -1,0 +1,12 @@
+# Archived
+/_arch
+
+# Cache
+__pycache__
+cache/
+
+# Data
+data/
+
+# Models
+models/
