@@ -1,0 +1,32 @@
+2025-02-18 18:10:53,252 - INFO - Loading data from data/processed/v3/splits/base
+2025-02-18 18:10:54,430 - INFO - Training set shape: (458702, 170)
+2025-02-18 18:10:54,431 - INFO - Test set shape: (114676, 170)
+2025-02-18 18:10:54,433 - INFO - Class distribution in training: [338017 120685]
+2025-02-18 18:10:54,433 - INFO - Starting hyperparameter tuning
+2025-02-18 18:10:58,978 - ERROR - Error during tuning: Invalid parameter 'max_samples' for estimator DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=7, random_state=42). Valid parameters are: ['ccp_alpha', 'class_weight', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'monotonic_cst', 'random_state', 'splitter'].
+2025-02-18 18:10:58,979 - ERROR - Error processing BASE: Invalid parameter 'max_samples' for estimator DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=7, random_state=42). Valid parameters are: ['ccp_alpha', 'class_weight', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'monotonic_cst', 'random_state', 'splitter'].
+2025-02-18 18:10:58,979 - INFO - Loading data from data/processed/v3/splits/smote
+2025-02-18 18:11:00,615 - INFO - Training set shape: (676034, 170)
+2025-02-18 18:11:00,615 - INFO - Test set shape: (114676, 170)
+2025-02-18 18:11:00,618 - INFO - Class distribution in training: [338017 338017]
+2025-02-18 18:11:00,629 - INFO - Starting hyperparameter tuning
+2025-02-18 18:11:05,164 - ERROR - Error during tuning: Invalid parameter 'max_samples' for estimator DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=7, random_state=42). Valid parameters are: ['ccp_alpha', 'class_weight', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'monotonic_cst', 'random_state', 'splitter'].
+2025-02-18 18:11:05,164 - ERROR - Error processing SMOTE: Invalid parameter 'max_samples' for estimator DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=7, random_state=42). Valid parameters are: ['ccp_alpha', 'class_weight', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'monotonic_cst', 'random_state', 'splitter'].
+2025-02-18 18:11:05,164 - INFO - Loading data from data/processed/v3/splits/smote_pca
+2025-02-18 18:11:05,241 - INFO - Training set shape: (676034, 1)
+2025-02-18 18:11:05,242 - INFO - Test set shape: (114676, 1)
+2025-02-18 18:11:05,244 - INFO - Class distribution in training: [338017 338017]
+2025-02-18 18:11:05,265 - INFO - Starting hyperparameter tuning
+2025-02-18 18:11:09,456 - ERROR - Error during tuning: Invalid parameter 'max_samples' for estimator DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=7, random_state=42). Valid parameters are: ['ccp_alpha', 'class_weight', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'monotonic_cst', 'random_state', 'splitter'].
+2025-02-18 18:11:09,456 - ERROR - Error processing SMOTE_PCA: Invalid parameter 'max_samples' for estimator DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+                       max_depth=7, random_state=42). Valid parameters are: ['ccp_alpha', 'class_weight', 'criterion', 'max_depth', 'max_features', 'max_leaf_nodes', 'min_impurity_decrease', 'min_samples_leaf', 'min_samples_split', 'min_weight_fraction_leaf', 'monotonic_cst', 'random_state', 'splitter'].
+2025-02-18 18:13:10,638 - INFO - Loading data from data/processed/v3/splits/base
+2025-02-18 18:13:10,937 - INFO - Training set shape: (458702, 170)
+2025-02-18 18:13:10,937 - INFO - Test set shape: (114676, 170)
+2025-02-18 18:13:10,939 - INFO - Class distribution in training: [338017 120685]
+2025-02-18 18:13:10,939 - INFO - Starting hyperparameter tuning

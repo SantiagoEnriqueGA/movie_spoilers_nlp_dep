@@ -1,0 +1,16 @@
+2025-02-18 17:57:21,586 - INFO - Loading data from data/processed/v3/splits/base
+2025-02-18 17:57:21,890 - INFO - Training set shape: (458702, 170)
+2025-02-18 17:57:21,891 - INFO - Test set shape: (114676, 170)
+2025-02-18 17:57:21,893 - INFO - Class distribution in training: [338017 120685]
+2025-02-18 17:57:21,894 - INFO - Starting hyperparameter tuning
+2025-02-18 17:58:51,183 - INFO - Best parameters: {'alpha': np.float64(3.1489116479568635e-05), 'class_weight': 'balanced', 'epsilon': np.float64(0.028343478986616377), 'eta0': np.float64(0.7896910002727693), 'l1_ratio': np.float64(0.596850157946487), 'learning_rate': 'adaptive', 'loss': 'perceptron', 'max_iter': 1000, 'penalty': 'elasticnet', 'power_t': np.float64(0.15227525095137953)}
+2025-02-18 17:58:51,184 - INFO - Best F1 score: 0.4572
+2025-02-18 17:58:51,185 - INFO - Evaluating tuned model
+2025-02-18 18:01:39,433 - INFO - Evaluation results: {'cv_f1_mean': np.float64(0.45721089419835315), 'cv_f1_std': np.float64(0.038663742480008326), 'test_f1': 0.467328411811652, 'test_roc_auc': None}
+2025-02-18 18:01:39,435 - INFO - Saved tuned model to models/v3/tuned/sgd_classifier_base.pkl
+2025-02-18 18:01:39,436 - INFO - Saved results to reports/v3/tuning/sgd_classifier_base.json
+2025-02-18 18:03:44,957 - INFO - Loading data from data/processed/v3/splits/smote
+2025-02-18 18:03:46,659 - INFO - Training set shape: (676034, 170)
+2025-02-18 18:03:46,659 - INFO - Test set shape: (114676, 170)
+2025-02-18 18:03:46,662 - INFO - Class distribution in training: [338017 338017]
+2025-02-18 18:03:46,701 - INFO - Starting hyperparameter tuning

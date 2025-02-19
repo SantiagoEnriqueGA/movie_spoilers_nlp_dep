@@ -1,0 +1,5 @@
+2025-02-18 18:13:57,129 - INFO - Loading data from data/processed/v3/splits/base
+2025-02-18 18:13:59,478 - INFO - Training set shape: (458702, 170)
+2025-02-18 18:13:59,478 - INFO - Test set shape: (114676, 170)
+2025-02-18 18:13:59,479 - INFO - Class distribution in training: [338017 120685]
+2025-02-18 18:13:59,480 - INFO - Starting hyperparameter tuning
